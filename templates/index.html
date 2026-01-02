@@ -5,9 +5,16 @@
     <title>Flask Sederhana</title>
 </head>
 <body>
-    <h1>Halo {{ nama }} 👋</h1>
-    <p>Aplikasi Flask sederhana berhasil dijalankan.</p>
+    <h1>Aplikasi {{nama}}</h1>
+   <p>Aplikasi ini sedang berjalan pada:</p>
 
-    <a href="/about">Ke halaman About</a>
+    <div style="background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc;">
+        <strong>Instance ID:</strong> {{ id_mesin }}
+    </div>
+
+    <ul>
+        <li><a href="/db-test">Jalankan DB Test</a></li>
+        <li><a href="/cpu-test">Jalankan CPU Test (n³)</a></li>
+    </ul>
 </body>
 </html>
