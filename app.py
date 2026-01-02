@@ -35,5 +35,5 @@ def cpu_test():
 
     return render_template('cpu_test.html')
 
-if __name__ == '_main_':
+if __name__ == '__main__':
     app.run(debug=True)
