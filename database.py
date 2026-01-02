@@ -6,7 +6,7 @@ class Database() :
     def get_connection():
         connection_string = (
             f"Driver={{ODBC Driver 18 for SQL Server}};"
-            f"Server={os.environ.get('DB_SERVER')}"
+            f"Server={os.environ.get('DB_SERVER')};"
             f"Database={os.environ.get('DB_DATABASE')};"
             f"UID={os.environ.get('DB_USERNAME')};"
             f"PWD ={os.environ.get('DB_PASSWORD')};"

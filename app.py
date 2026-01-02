@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from database import Database
 import time
+import os
 
 app = Flask(__name__)
 
@@ -8,11 +9,15 @@ database = Database()
 
 @app.route('/')
 def index():
-    return render_template('index.html', nama="Mahasiswa Telkom")
+    instance_id  = os.environ.get('WEBSITE_INSTANCE_ID', 'Local-Machine')
 
-@app.route('/about')
-def about():
-    return "Ini halaman About (Flask sederhana)"
+    return render_template('index.html', nama="Kelompok 7", id_mesin = instance_id)
+
+@app.route('/db-test')
+def db_test():
+    hasil = database.db_test()
+
+    return render_template('db-test.html', status=hasil)
 
 # ENDPOINT BARU (bukan /stress)
 @app.route('/cpu-test')
