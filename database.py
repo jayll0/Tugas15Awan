@@ -3,13 +3,13 @@ import pyodbc
 
 class Database() :
     # Koneksi ke database
-    def get_connection():
+    def get_connection(self):
         connection_string = (
             f"Driver={{ODBC Driver 18 for SQL Server}};"
             f"Server={os.environ.get('DB_SERVER')};"
             f"Database={os.environ.get('DB_DATABASE')};"
             f"UID={os.environ.get('DB_USERNAME')};"
-            f"PWD ={os.environ.get('DB_PASSWORD')};"
+            f"PWD={os.environ.get('DB_PASSWORD')};"
             "Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
         )
 
@@ -21,9 +21,9 @@ class Database() :
             connection = self.get_connection()
             cursor = connection.cursor()
             cursor.execute("SELECT @@VERSION")
-            row = cursor.fetchnone()
+            row = cursor.fetchone()
             connection.close()
-            return f"<h1> Berhasil Connect ke Database</h1><h2>Versi Database: {row[0]}</h2>"
+            return f"Berhasil Connect ke Database Versi Database: {row[0]}"
         
         except Exception as error:
-            return f"<h1> Gagal Connect ke Database </h1> </h2> Pesan Error : {str(error)} </h2>"
+            return f"Gagal Connect ke Database </h1> </h2> Pesan Error : {str(error)}"
