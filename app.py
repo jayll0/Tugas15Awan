@@ -23,8 +23,8 @@ def db_test():
 @app.route('/cpu-test')
 def cpu_test():
     start_time = time.time()
-    duration = 300  # 5 menit (300 detik)
-    n = 500         # nilai n untuk loop n^3
+    duration = 3  # 5 menit (300 detik)
+    n = 10         # nilai n untuk loop n^3
 
     while time.time() - start_time < duration:
         # Perulangan bersarang n^3 (Cubic Complexity)
@@ -33,7 +33,7 @@ def cpu_test():
                 for k in range(n):
                     _ = i * j * k  # Beban CPU
 
-    return render_template('cpu_test.html')
+    return render_template('cpu-test.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
