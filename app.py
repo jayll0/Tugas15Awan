@@ -11,7 +11,7 @@ database = Database()
 def index():
     instance_id  = os.environ.get('WEBSITE_INSTANCE_ID', 'Local-Machine')
 
-    return render_template('index.html', nama="Kelompok 7", id_mesin = instance_id)
+    return render_template('index.html', nama="Kelompok 5", id_mesin = instance_id)
 
 @app.route('/db-test')
 def db_test():
