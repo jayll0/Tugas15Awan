@@ -33,7 +33,7 @@ def cpu_test():
                 for k in range(n):
                     _ = i * j * k  # Beban CPU
 
-    return render_template('cpu_test.html')
+    return render_template('cpu-test.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
